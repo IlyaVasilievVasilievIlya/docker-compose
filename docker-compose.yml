@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  gitlab_runner_back1:
+    container_name: backend1
+    image: gitlab/gitlab-runner:alpine3.19
+    volumes:
+      - /srv/backend1/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  gitlab_runner_back2:
+    container_name: backend2
+    image: gitlab/gitlab-runner:alpine3.19
+    volumes:
+      - /srv/backend2/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
